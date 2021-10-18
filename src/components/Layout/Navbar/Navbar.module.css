@@ -13,8 +13,17 @@
     display: flex;
     max-width: 15rem;
     align-items: center;
+    list-style: none;
 }
 
-.links p {
+.nav a {
+    text-decoration: none;
+    color: #EDEDED;
     padding: 0 10px;
+}
+
+.nav a:active,
+.nav a:hover,
+.nav a.active {
+    color: #8d8d8d;
 }

@@ -1,7 +1,7 @@
-import classes from "./Home.module.css"
-import UrlForm from "../components/URLForm/URLForm";
+import classes from "./HomePage.module.css"
+import UrlForm from "../../components/URLForm/URLForm";
 
-const Home = () => {
+const HomePage = () => {
     return (
         <div className={classes.home}>
             <h1>SQL, XSS and NoSQL Injection Scanner</h1>
@@ -11,4 +11,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default HomePage;

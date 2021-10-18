@@ -8,6 +8,12 @@
     height: 400px;
 }
 
+#errorMessage {
+    padding: 0;
+    color: #d25f78;
+    margin: 8px 0 auto;
+}
+
 .form input {
     border-radius: 12px;
     background-color: #EDEDED;
@@ -24,10 +30,6 @@
     justify-content: space-between;
     width: 80%;
     margin: 40px auto;
-}
-
-.checkbox {
-
 }
 
 .container {
