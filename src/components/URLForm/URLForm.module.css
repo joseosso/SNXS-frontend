@@ -113,8 +113,8 @@
 
 .form button:hover,
 .form button:active {
-    background-color: #EDEDED;
-    color: #DA0037;
-    border: 1px solid #DA0037;
+    background-color: #d7174a;
+    color: #EDEDED;
+    border: 1px solid #d7174a;
 
 }
