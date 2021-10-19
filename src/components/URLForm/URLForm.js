@@ -1,9 +1,14 @@
 import classes from './URLForm.module.css'
 import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import Spinner from "../Spinner/Spinner";
+import {startScan} from "../../store/scan";
 
 const isUrl = require('is-url')
 
 const UrlForm = () => {
+
+    const dispatch = useDispatch();
 
     const [sqlFilter, setSqlFilter] = useState({
         name: 'sql',
@@ -24,6 +29,8 @@ const UrlForm = () => {
     const [url, setUrl] = useState('');
     const [urlErrors, setUrlErrors] = useState(false);
     const [cookie, setCookie] = useState('');
+
+    const isLoading = useSelector(state => state.ui.urlFormIsLoading);
 
     const checkboxClickedHandler = (event) => {
         const name = event.target.name;
@@ -71,19 +78,19 @@ const UrlForm = () => {
         return sqlFilter.state || xssFilter.state || noSqlFilter.state;
     }
 
-    // const clearFields = () => {
-    //     setUrl('');
-    //     setCookie('');
-    //     setSqlFilter(prevState => {
-    //         return {...prevState, state: false}
-    //     });
-    //     setXssFilter(prevState => {
-    //         return {...prevState, state: false}
-    //     });
-    //     setNoSqlFilter(prevState => {
-    //         return {...prevState, state: false}
-    //     });
-    // }
+    const clearFields = () => {
+        setUrl('');
+        setCookie('');
+        setSqlFilter(prevState => {
+            return {...prevState, state: false}
+        });
+        setXssFilter(prevState => {
+            return {...prevState, state: false}
+        });
+        setNoSqlFilter(prevState => {
+            return {...prevState, state: false}
+        });
+    }
 
     const scanClickedHandler = (event) => {
         event.preventDefault();
@@ -91,12 +98,13 @@ const UrlForm = () => {
             setUrlErrors(false)
             if (checkFilters()) {
                 setFilterErrors(false);
-                // const payload = {
-                //     url: url,
-                //     cookie: cookie,
-                //     type: `${sqlFilter.state ? '1' : ''}${xssFilter.state ? '2' : ''}${noSqlFilter.state ? '3' : ''}`
-                // };
-                // Dispatch the send payload function on redux store
+                const payload = {
+                    url: url,
+                    cookie: cookie,
+                    type: `${sqlFilter.state ? '1' : ''}${xssFilter.state ? '2' : ''}${noSqlFilter.state ? '3' : ''}`
+                };
+                // Maybe send a callback function to startScan to clear fields and redirect from there.
+                dispatch(startScan(payload, clearFields));
             } else {
                 setFilterErrors(true);
             }
@@ -135,7 +143,7 @@ const UrlForm = () => {
 
     return (
         <section className={classes.form}>
-            {form}
+            {isLoading ? <Spinner/> : form}
         </section>
     );
 };
