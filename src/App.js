@@ -3,6 +3,7 @@ import HomePage from "./pages/Home/HomePage";
 import {Redirect, Route, Switch} from "react-router-dom";
 import AboutPage from "./pages/About/AboutPage";
 import GuidePage from "./pages/Guide/GuidePage";
+import ScanResultPage from "./pages/ScanResult/ScanResultPage";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
             </Route>
             <Route path={'/guide'}>
                 <GuidePage />
+            </Route>
+            <Route path={'/result'}>
+                <ScanResultPage />
             </Route>
             <Route path={"*"}>
                 <Redirect to={"/"}/>

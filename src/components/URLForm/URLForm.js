@@ -2,13 +2,16 @@ import classes from './URLForm.module.css'
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import Spinner from "../Spinner/Spinner";
-import {startScan} from "../../store/scan";
+import {startScan} from "../../store/scanner";
+import {useHistory} from "react-router-dom";
 
 const isUrl = require('is-url')
 
 const UrlForm = () => {
 
     const dispatch = useDispatch();
+
+    const history = useHistory();
 
     const [sqlFilter, setSqlFilter] = useState({
         name: 'sql',
@@ -31,6 +34,7 @@ const UrlForm = () => {
     const [cookie, setCookie] = useState('');
 
     const isLoading = useSelector(state => state.ui.urlFormIsLoading);
+    const scanHasError = useSelector(state => state.scanner.scanHasError);
 
     const checkboxClickedHandler = (event) => {
         const name = event.target.name;
@@ -92,6 +96,15 @@ const UrlForm = () => {
         });
     }
 
+    const scanFinishedHandler = (error) => {
+        if (!error) {
+            clearFields();
+            history.push({
+                pathname: '/result',
+            });
+        }
+    }
+
     const scanClickedHandler = (event) => {
         event.preventDefault();
         if (isUrl(url)) {
@@ -103,8 +116,7 @@ const UrlForm = () => {
                     cookie: cookie,
                     type: `${sqlFilter.state ? '1' : ''}${xssFilter.state ? '3' : ''}${noSqlFilter.state ? '2' : ''}`
                 };
-                // Maybe send a callback function to startScan to clear fields and redirect from there.
-                dispatch(startScan(payload, clearFields));
+                dispatch(startScan(payload, scanFinishedHandler));
             } else {
                 setFilterErrors(true);
             }
@@ -137,6 +149,9 @@ const UrlForm = () => {
                 </label>
             </div>
             {filterErrors && <p id={classes['errorMessage']}>Please select at least one type of scan</p>}
+            {scanHasError &&
+            <p id={classes['errorMessage']}>There was a problem with the scan. Please check your parameters and try
+                again</p>}
             <button>SCAN</button>
         </form>
     )

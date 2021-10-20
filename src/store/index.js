@@ -1,10 +1,10 @@
 import {configureStore} from "@reduxjs/toolkit";
 import {uiSlice} from "./ui";
-import {scanSlice} from "./scan";
+import {scanSlice} from "./scanner";
 
 export const store = configureStore({
     reducer: {
         ui: uiSlice.reducer,
-        scan: scanSlice.reducer
+        scanner: scanSlice.reducer
     },
 })
