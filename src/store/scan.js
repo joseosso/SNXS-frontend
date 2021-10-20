@@ -1,5 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {uiActions} from "./ui";
+import axios from "../axios/axios";
 
 const initialState = {
     scanResult: null,
@@ -25,6 +26,13 @@ export const startScan = (payload, clearFields) => {
     return (dispatch) => {
         dispatch(scanActions.setScanHasError(false));
         dispatch(uiActions.setUrlFormIsLoading(true));
-        // axios post request...
+        axios.post("", payload).then(response => {
+            console.log(response.data);
+            dispatch(uiActions.setUrlFormIsLoading(false));
+        }).catch(error => {
+            console.log(error);
+            dispatch(scanActions.setScanHasError(true));
+            dispatch(uiActions.setUrlFormIsLoading(false));
+        })
     }
 }

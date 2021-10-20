@@ -101,7 +101,7 @@ const UrlForm = () => {
                 const payload = {
                     url: url,
                     cookie: cookie,
-                    type: `${sqlFilter.state ? '1' : ''}${xssFilter.state ? '2' : ''}${noSqlFilter.state ? '3' : ''}`
+                    type: `${sqlFilter.state ? '1' : ''}${xssFilter.state ? '3' : ''}${noSqlFilter.state ? '2' : ''}`
                 };
                 // Maybe send a callback function to startScan to clear fields and redirect from there.
                 dispatch(startScan(payload, clearFields));
