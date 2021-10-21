@@ -2,9 +2,32 @@
     width: 1000px;
     max-width: 90%;
     margin: 35px auto;
-    padding-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: #444444;
     border-radius: 16px;
-    height: 400px;
-    max-height: 1000px;
+}
+
+.result {
+    width: 900px;
+    max-width: 90%;
+    text-align: left;
+    margin: 5px auto;
+}
+
+.result h1 {
+    font-size: 36px;
+    color: #EDEDED;
+}
+
+.result h2 {
+    font-size: 28px;
+    color: #EDEDED;
+}
+
+.result p {
+    font-size: 19px;
+    color: #AAA9A9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }

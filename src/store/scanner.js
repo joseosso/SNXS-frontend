@@ -13,6 +13,7 @@ export const scanSlice = createSlice({
     reducers: {
         setScanResult(state, action) {
             state.scanResult = action.payload;
+            console.log(action.payload)
         },
         setScanHasError(state, action) {
             state.scanHasError = action.payload;
@@ -28,7 +29,6 @@ export const startScan = (payload, callback) => {
         dispatch(scanActions.setScanResult(null));
         dispatch(uiActions.setUrlFormIsLoading(true));
         axios.post("", payload).then(response => {
-            console.log(response.data);
             dispatch(uiActions.setUrlFormIsLoading(false));
             dispatch(scanActions.setScanResult(response.data));
             callback(false);
