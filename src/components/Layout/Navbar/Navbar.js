@@ -8,9 +8,12 @@ const Navbar = () => {
         <nav className={classes.nav}>
             <NavLink to={'/'}><h1>SNXS</h1></NavLink>
             <ul className={classes.links}>
-                <li><NavLink exact activeClassName={classes.active} to={'/'}>Home</NavLink></li>
-                <li><NavLink exact activeClassName={classes.active} to={'/guide'}>Guides</NavLink></li>
-                <li><NavLink exact activeClassName={classes.active} to={'/about'} >About</NavLink></li>
+                <li><NavLink className={(navData) => navData.isActive ? classes.active : ''} to={'/'}>Home</NavLink>
+                </li>
+                <li><NavLink className={(navData) => navData.isActive ? classes.active : ''}
+                             to={'/guide'}>Guides</NavLink></li>
+                <li><NavLink className={(navData) => navData.isActive ? classes.active : ''}
+                             to={'/about'}>About</NavLink></li>
             </ul>
         </nav>
     );

@@ -3,7 +3,7 @@ import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import Spinner from "../Spinner/Spinner";
 import {startScan} from "../../store/scanner";
-import {useHistory} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const isUrl = require('is-url')
 
@@ -11,7 +11,7 @@ const UrlForm = () => {
 
     const dispatch = useDispatch();
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const [sqlFilter, setSqlFilter] = useState({
         name: 'sql',
@@ -99,9 +99,7 @@ const UrlForm = () => {
     const scanFinishedHandler = (error) => {
         if (!error) {
             clearFields();
-            history.push({
-                pathname: '/result',
-            });
+            navigate('/result', {replace: true});
         }
     }
 

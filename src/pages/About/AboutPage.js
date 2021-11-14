@@ -25,7 +25,7 @@ const AboutPage = () => {
                     and our goal is to set the basis for what could become the best open-source tool for scanning
                     websites.</p>
             </Card>
-            <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            {/*<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>*/}
         </section>
     );
 };
