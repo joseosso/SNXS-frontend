@@ -9,10 +9,18 @@ const ScanResultPage = () => {
 
     const result = (
         <Fragment>
-            <h1>These are the results of the scan:</h1>
-            <ScanResult title={'SQL Injection'} text={scanResult.SQLi}/>
-            <ScanResult title={'NoSQL Injection'} text={scanResult.NoSQLi}/>
-            <ScanResult title={'XSS'} text={scanResult.XSS}/>
+            <div className={classes.result}>
+                <h1>These are the results of the scan:</h1>
+                {
+                    scanResult.data.SQLi && <ScanResult title={'SQL Injection'} text={scanResult.data.SQLi}/>
+                }
+                {
+                    scanResult.data.NoSQLi && <ScanResult title={'NoSQL Injection'} text={scanResult.data.NoSQLi}/>
+                }
+                {
+                    scanResult.data.XSS && <ScanResult title={'XSS'} text={scanResult.data.XSS}/>
+                }
+            </div>
         </Fragment>
     )
 
