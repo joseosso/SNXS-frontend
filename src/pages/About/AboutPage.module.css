@@ -17,6 +17,12 @@
     height: 4rem;
 }
 
+.featureList em {
+    color: #de0c40;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .featureList p {
     padding: 0 100px;
 }
@@ -34,4 +40,19 @@
 
 .numberImage {
     height: 20px;
+}
+
+.list {
+    font-size: 22px;
+}
+
+.list a {
+    color: white;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.list a:hover,
+.list a:focus {
+    color: #ccc;
 }

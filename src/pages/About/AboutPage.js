@@ -1,8 +1,6 @@
 import React from 'react';
 import classes from './AboutPage.module.css';
 import Card from "../../components/UI/Card/Card";
-import NumberOne from "../../assets/numberOne.png";
-import NumberTwo from "../../assets/numberTwo.png";
 
 const AboutPage = () => {
     return (
@@ -18,12 +16,23 @@ const AboutPage = () => {
                 <p>SNXS was developed after noticing that most tools to detect SQL, NoSQL injections and XSS fell into
                     two groups:</p>
                 <div className={classes.featureList}>
-                        <p><img className={classes.numberImage} src={NumberOne} alt="number 1"/> User-friendly but expensive</p>
-                        <p><img className={classes.numberImage} src={NumberTwo} alt="number 2"/> Free but difficult to use</p>
+                        <p><em>1.</em> User-friendly but expensive</p>
+                        <p><em>2.</em> Free but difficult to use</p>
                 </div>
-                <p>The app was started as a thesis project by Jose Ossorio and Marco Pérez at Icesi University on 2021
-                    and our goal is to set the basis for what could become the best open-source tool for scanning
-                    websites.</p>
+                <p>The app was part of a graduation project at Icesi University in 2021
+                    and the goal is to set the basis for what could become the best open-source tool for scanning
+                    websites. Those involved are:</p>
+                <ul className={classes.list}>
+                    <li>Jose Manuel Ossorio (Dev)</li>
+                    <li>Marco Antonio Pérez (Dev)</li>
+                    <li>Juan Manuel Madrid (Tutor)</li>
+                </ul>
+                <p>The following tools are used by SNXS to scan for each of the vulnerabilities:</p>
+                <ul className={classes.list}>
+                    <li><a href="/">Damn Small XSS Scanner by Miroslav Stampar</a></li>
+                    <li><a href="/">sqlmap by the sqlmap team</a></li>
+                    <li><a href="/">NoSQLi by Charlie Belmer</a></li>
+                </ul>
             </Card>
             {/*<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>*/}
         </section>
