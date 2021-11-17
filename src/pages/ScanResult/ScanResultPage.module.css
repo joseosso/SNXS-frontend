@@ -22,7 +22,8 @@
 
 .result h2 {
     font-size: 28px;
-    color: #EDEDED;
+    color: #DA0037;
+    font-weight: bold;
 }
 
 .result p {
