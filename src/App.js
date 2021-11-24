@@ -4,6 +4,7 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import AboutPage from "./pages/About/AboutPage";
 import GuidePage from "./pages/Guide/GuidePage";
 import ScanResultPage from "./pages/ScanResult/ScanResultPage";
+import SqlInjection from "./pages/Guide/SQLInjection/SQLInjection";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
             <Route path={'/'} element={<HomePage />}/>
             <Route path={'/about'} element={<AboutPage />}/>
             <Route path={'/guide'} element={<GuidePage />}/>
+            <Route path={'/guide/sql-injection/*'} element={<SqlInjection />} />
             <Route path={'/result'} element={<ScanResultPage />}/>
             <Route path={"*"} element={<Navigate replace to={"/"}/>}/>
         </Routes>
