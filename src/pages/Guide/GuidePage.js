@@ -21,7 +21,7 @@ const GuidePage = () => {
                             <ul className={classes.list}>
                                 <li><Link to="sql-injection">SQL Injection</Link></li>
                                 <li><a href="/">NoSQL Injection</a></li>
-                                <li><a href="/">XSS</a></li>
+                                <li><Link to="xss">XSS</Link></li>
                             </ul>
                         </Card>
                     </Fragment>
