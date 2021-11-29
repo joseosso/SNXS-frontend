@@ -3,6 +3,7 @@ import classes from "../SQLInjection/SQLInjection.module.css";
 import Card from "../../../components/UI/Card/Card";
 import SqlInjectionType from "./SQLInjectionType";
 import {Fragment} from "react";
+import Mitigation from "../Mitigation";
 
 const SqlInjection = () => {
 
@@ -31,7 +32,7 @@ const SqlInjection = () => {
                 <li><Link to={'union-based'}>UNION query-based</Link></li>
                 <li><Link to={'stack-queries-based'}>Stacked queries</Link></li>
             </ul>
-            <h2>Mitigation</h2>
+            <h2><Link to={'mitigation'}>Mitigation</Link></h2>
             <h2>Sources and further reading:</h2>
             <ul>
                 <li><a href={'https://capec.mitre.org/data/definitions/66.html'}>CAPEC-66: SQL Injection</a></li>
@@ -153,6 +154,42 @@ const SqlInjection = () => {
                 Sheet - Netsparker</a></li>
         </ul>}/>;
 
+    const mitigation = <Mitigation title={<h1>Prevention of SQLi</h1>}
+                                   content={(
+                                       <Fragment>
+                                           <p>The following is a summarized set of prevention measures provided by
+                                               OWASP</p>
+                                           <h2>Primary Defense:</h2>
+                                           <ul>
+                                               <li>Use of Prepared Statements (with Parameterized Queries)</li>
+                                               <li>Use of Sorted Procedures</li>
+                                               <li>Allow-list Input validation</li>
+                                               <li>Escaping All User Supplied Input</li>
+                                           </ul>
+                                           <h2>Secondary Defense:</h2>
+                                           <ul>
+                                               <li>Enforcing Least Privilege</li>
+                                               <li>Performing Allow-list Input validation as a Secondary Defense</li>
+                                           </ul>
+                                           <h2>Example:</h2>
+                                           <p>(Java prepared statement)</p>
+                                           <code>String custname = request.getParameter(“customerName”);</code><br/>
+                                           <code> String query = “SELECT account_balance FROM user_data WHERE user_name = ? ”;</code><br/>
+                                           <code>PreparedStatement pstmt = connection.prepareStatement(query);</code><br/>
+                                           <code>pstmt.setString(1, custname);</code>br/>
+                                           <code>ResultSet results = pstmt.executeQuery();</code><br/>
+                                           <h2>Sources and further reading:</h2>
+                                           <ul>
+                                               <li><a
+                                                   href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">SQL
+                                                   Injection Prevention Cheat Sheet</a></li>
+                                               <li><a
+                                                   href="https://www.acunetix.com/websitesecurity/blind-sql-injection/">What
+                                                   is SQL Injection (SQLi) and How to Prevent It - Acunetix</a></li>
+                                           </ul>
+                                       </Fragment>
+                                   )}/>;
+
     return (
         <Routes>
             <Route path={'/'} element={sqlHome}/>
@@ -161,6 +198,7 @@ const SqlInjection = () => {
             <Route path={'error-based'} element={errorBased}/>
             <Route path={'union-based'} element={unionBased}/>
             <Route path={'stack-queries-based'} element={stackQueriesBased}/>
+            <Route path={'mitigation'} element={mitigation}/>
         </Routes>
 
     );
