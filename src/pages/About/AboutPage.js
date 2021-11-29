@@ -23,15 +23,18 @@ const AboutPage = () => {
                     and the goal is to set the basis for what could become the best open-source tool for scanning
                     websites. Those involved are:</p>
                 <ul className={classes.list}>
-                    <li>Jose Manuel Ossorio (Dev)</li>
-                    <li>Marco Antonio Pérez (Dev)</li>
-                    <li>Juan Manuel Madrid (Tutor)</li>
+                    <li><a href="https://www.linkedin.com/in/jose-ossorio-945848155/">
+                        Jose Manuel Ossorio (Dev)</a></li>
+                    <li><a href="https://www.linkedin.com/in/marcopza/">
+                        Marco Antonio Pérez (Dev)</a></li>
+                    <li><a href="https://www.linkedin.com/in/juanmanuelmadrid/">
+                        Juan Manuel Madrid (Tutor)</a></li>
                 </ul>
                 <p>The following tools are used by SNXS to scan for each of the vulnerabilities:</p>
                 <ul className={classes.list}>
-                    <li><a href="/">Damn Small XSS Scanner by Miroslav Stampar</a></li>
-                    <li><a href="/">sqlmap by the sqlmap team</a></li>
-                    <li><a href="/">NoSQLi by Charlie Belmer</a></li>
+                    <li><a href="https://github.com/stamparm/DSXS">Damn Small XSS Scanner by Miroslav Stampar</a></li>
+                    <li><a href="https://sqlmap.org/">sqlmap by the sqlmap team</a></li>
+                    <li><a href="https://github.com/Charlie-belmer/nosqli">NoSQLi by Charlie Belmer</a></li>
                 </ul>
             </Card>
             {/*<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>*/}
