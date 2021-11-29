@@ -33,9 +33,11 @@ const NoSqlInjection = () => {
                 <h2><Link to={'mitigation'}>Mitigation</Link></h2>
                 <h2>Sources and further reading:</h2>
                 <ul>
-                    <li><a href="/">What is NoSQL Injection and How Can You Prevent It? - Netsparker</a></li>
-                    <li><a href="/">NoSQLi’s github page - Charlie Belmer</a></li>
-                    <li><a href="/">NoSQL Injections and how to Avoid Them</a></li>
+                    <li><a href="https://www.netsparker.com/blog/web-security/what-is-nosql-injection/">
+                        What is NoSQL Injection and How Can You Prevent It? - Netsparker</a></li>
+                    <li><a href="https://github.com/Charlie-belmer/nosqli">NoSQLi’s github page - Charlie Belmer</a></li>
+                    <li><a href="https://www.acunetix.com/blog/web-security-zone/nosql-injections/">
+                        NoSQL Injections and how to Avoid Them - Tomasz A. Nidecki. - Acunetix</a></li>
                 </ul>
             </Card>
         </section>
@@ -48,19 +50,17 @@ const NoSqlInjection = () => {
         sample={(
             <Fragment>
                 <p>The following code represents a sample backend query:</p>
-                {/*<code>db.product.find( {"id": 5} )</code>*/}
+                    <code>db.product.find( &#123;"id": 5&#125; )</code>
                 <p>The following modification uses the $ne (not equals) operator to
                     select all
                     products different to that with ID 5:</p>
-                {/*<code>db.product.find( {"id": {"$ne": 5} } )</code>*/}
+                <code>db.product.find( &#123;"id": &#123;"$ne": 5&#125; &#125; )</code>
             </Fragment>
         )}
         sources={
             <ul>
-                <li><a href="/">NoSQL Injection Cheatsheet - Nullsweep -
+                <li><a href="https://nullsweep.com/nosql-injection-cheatsheet/">NoSQL Injection Cheatsheet - Nullsweep -
                     Charlie Belmer</a></li>
-                <li><a href="/">What are Blind SQL Injections - Acunetix</a>
-                </li>
             </ul>
         }/>
 
@@ -71,14 +71,15 @@ const NoSqlInjection = () => {
         sample={(
             <Fragment>
                 <p>The following code represents a pair of possible injection strings:</p>
-                {/*<code>{"$where":  "sleep(100)"}</code>*/}
-                <code>;sleep(100);</code>
+                    <code>&#123;"$where": "sleep(100)"&#125;</code>
+                    <br/>
+                    <code>;sleep(100);</code>
             </Fragment>
         )}
         sources={
             <ul>
-                <li><a href="/">NoSQL Injection Cheatsheet - Nullsweep - Charlie Belmer</a></li>
-                <li><a href="/">What are Blind SQL Injections - Acunetix</a></li>
+                <li><a href="https://nullsweep.com/nosql-injection-cheatsheet/">
+                    NoSQL Injection Cheatsheet - Nullsweep - Charlie Belmer</a></li>
             </ul>
         }/>
 
@@ -97,8 +98,8 @@ const NoSqlInjection = () => {
         )}
         sources={
             <ul>
-                <li><a href="/">NoSQL Injection Cheatsheet - Nullsweep - Charlie Belmer</a></li>
-                <li><a href="/">What are Blind SQL Injections - Acunetix</a></li>
+                <li><a href="https://nullsweep.com/nosql-injection-cheatsheet/">
+                    NoSQL Injection Cheatsheet - Nullsweep - Charlie Belmer</a></li>
             </ul>
         }/>
 
@@ -128,12 +129,14 @@ const NoSqlInjection = () => {
                 </ul>
                 <h2>Sources and further reading:</h2>
                 <ul>
-                    <li><a href="/">NoSQL Injections and How to Avoid Them - Acunetix - Tomasz A Nidecki</a></li>
-                    <li><a href="/">What is NoSQL Injection and How Can You Prevent It? - Netsparker - Zbigniew
-                        Banach</a></li>
-                    <li><a href="/">FAQ: MongoDB Fundamentals. How does MongoDB address SQL or Query Injection -
-                        MongoDB</a></li>
-                    <li><a href="/">Testing for NoSQL Injection - OWASP</a></li>
+                    <li><a href="https://www.acunetix.com/blog/web-security-zone/nosql-injections/">
+                        NoSQL Injections and How to Avoid Them - Acunetix - Tomasz A Nidecki</a></li>
+                    <li><a href="https://www.netsparker.com/blog/web-security/what-is-nosql-injection/">
+                        What is NoSQL Injection and How Can You Prevent It? - Netsparker - Zbigniew Banach</a></li>
+                    <li><a href="https://docs.mongodb.com/manual/faq/fundamentals/#how-does-mongodb-address-sql-or-query-injection-">
+                        FAQ: MongoDB Fundamentals. How does MongoDB address SQL or Query Injection - MongoDB</a></li>
+                    <li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05.6-Testing_for_NoSQL_Injection">
+                        Testing for NoSQL Injection - OWASP</a></li>
                 </ul>
             </Fragment>
         )}/>
