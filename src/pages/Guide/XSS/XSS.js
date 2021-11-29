@@ -2,8 +2,8 @@ import {Link, Route, Routes} from "react-router-dom";
 import classes from "../XSS/XSS.module.css";
 import Card from "../../../components/UI/Card/Card";
 import XSSType from "./XSSType";
-import {Fragment} from "react";
-import XSSMitigationElement from "./XSSMitigationElement";
+import React, {Fragment} from "react";
+import Mitigation from "../Mitigation";
 
 const XSS = () => {
 
@@ -35,7 +35,8 @@ const XSS = () => {
             <h2>Sources and further reading:</h2>
             <ul>
                 <li><a href={'https://owasp.org/www-community/attacks/xss/'}>Cross Site Scripting (XSS) - OWASP</a></li>
-                <li><a href={'https://capec.mitre.org/data/definitions/63.html'}>CAPEC-63: Cross-Site Scripting (XSS) - CAPEC</a></li>
+                <li><a href={'https://capec.mitre.org/data/definitions/63.html'}>CAPEC-63: Cross-Site Scripting (XSS) -
+                    CAPEC</a></li>
             </ul>
         </Card>
     </section>);
@@ -48,23 +49,28 @@ const XSS = () => {
         </p>}
         sample={<Fragment><p>The following URL represents a sample page which has a Welcome %user%:</p>
             <code>http://example.com/index.php?user=MrSmith</code>
-            <p>Now the hacker may inject a script into (alert has to be inside of script tags which aren't complete here):</p>
+            <p>Now the hacker may inject a script into (alert has to be inside of script tags which aren't complete
+                here):</p>
             <code>http://example.com/index.php?user=&lt;script>alert(123)&lt;/script></code>
-            <p>If the application is vulnerable, the popup will be visible. With that, the hacker may inject more elaborate scripts
-            and serve the link to an unsuspecting user.</p></Fragment>}
+            <p>If the application is vulnerable, the popup will be visible. With that, the hacker may inject more
+                elaborate scripts
+                and serve the link to an unsuspecting user.</p></Fragment>}
         sources={<ul>
-            <li><a href={'https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/07-Input_Validation_Testing/01-Testing_for_Reflected_Cross_Site_Scripting.html'}>
+            <li><a
+                href={'https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/07-Input_Validation_Testing/01-Testing_for_Reflected_Cross_Site_Scripting.html'}>
                 Testing for Reflected Cross Site Scripting - OWASP</a>
             </li>
             <li><a href={'https://capec.mitre.org/data/definitions/591.html'}>CAPEC-591: Reflected XSS - CAPEC</a></li>
         </ul>}/>;
 
-    const mitigation = <XSSMitigationElement
+    const mitigation = <Mitigation
         title={<h1>Prevention of XSS</h1>}
-        rules={<Fragment>
+        content={<Fragment>
+            <p>The following are tips and rules on how to prevent XSS:</p>
+            <h2>OWASP's Rules:</h2>
             <ul>
                 <li>
-                   Never insert untrusted data except in allowed locations.
+                    Never insert untrusted data except in allowed locations.
                 </li>
                 <li>
                     HTML encode before inserting untrusted data into HTML element content.
@@ -91,14 +97,18 @@ const XSS = () => {
                     User HTTPOnly cookie flag.
                 </li>
             </ul>
-        </Fragment>}
-        sources={<ul>
-            <li><a href={'https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html'}>
-                Cross Site Scripting Prevention Cheat Sheet - OWASP</a></li>
-            <li><a href={'https://capec.mitre.org/data/definitions/63.html'}>CAPEC-63: Cross-Site Scripting (XSS) - CAPEC</a></li>
-            <li><a href={'https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html'}>DOM based XSS Prevention Cheat Sheet - OWASP</a></li>
-        </ul>}/>;
-
+            <h2>Sources and further reading:</h2>
+            <ul>
+                <li><a
+                    href={'https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html'}>
+                    Cross Site Scripting Prevention Cheat Sheet - OWASP</a></li>
+                <li><a href={'https://capec.mitre.org/data/definitions/63.html'}>CAPEC-63: Cross-Site Scripting (XSS) -
+                    CAPEC</a></li>
+                <li><a
+                    href={'https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html'}>DOM
+                    based XSS Prevention Cheat Sheet - OWASP</a></li>
+            </ul>
+        </Fragment>}/>;
 
     return (
         <Routes>
