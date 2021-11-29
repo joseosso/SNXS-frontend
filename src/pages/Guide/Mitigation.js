@@ -1,4 +1,4 @@
-import classes from "./SQLInjection/SQLInjection.module.css"
+import classes from "./GuideStyles.module.css";
 import Card from "../../components/UI/Card/Card";
 
 const Mitigation = (props) => {

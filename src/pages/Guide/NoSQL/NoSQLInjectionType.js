@@ -1,8 +1,8 @@
-import React from 'react';
 import classes from "../GuideStyles.module.css";
 import Card from "../../../components/UI/Card/Card";
+import React from "react";
 
-const SqlInjectionType = (props) => {
+const NoSqlInjectionType = (props) => {
     return (
         <section className={classes.content}>
             <div className={classes.title}>
@@ -26,4 +26,4 @@ const SqlInjectionType = (props) => {
     );
 };
 
-export default SqlInjectionType;
+export default NoSqlInjectionType;

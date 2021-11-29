@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from "./XSS.module.css";
+import classes from "../GuideStyles.module.css";
 import Card from "../../../components/UI/Card/Card";
 
 const XSSType = (props) => {

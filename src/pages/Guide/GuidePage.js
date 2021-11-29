@@ -20,7 +20,7 @@ const GuidePage = () => {
                             </p>
                             <ul className={classes.list}>
                                 <li><Link to="sql-injection">SQL Injection</Link></li>
-                                <li><a href="/">NoSQL Injection</a></li>
+                                <li><Link to="no-sql">NoSQL Injection</Link></li>
                                 <li><Link to="xss">XSS</Link></li>
                             </ul>
                         </Card>

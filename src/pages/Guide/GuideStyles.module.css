@@ -9,6 +9,10 @@ h2 {
     color: #DA0037;
 }
 
+h2 a {
+    color: #DA0037;
+}
+
 .title {
     font-weight: bold;
     margin-bottom: 4rem;

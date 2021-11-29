@@ -1,5 +1,5 @@
 import {Link, Route, Routes} from "react-router-dom";
-import classes from "../XSS/XSS.module.css";
+import classes from "../GuideStyles.module.css";
 import Card from "../../../components/UI/Card/Card";
 import XSSType from "./XSSType";
 import React, {Fragment} from "react";
