@@ -25,6 +25,9 @@
     color: #DA0037;
     font-weight: bold;
 }
+.card h3 {
+    color: #EDEDED;
+}
 
 .result p {
     font-size: 19px;

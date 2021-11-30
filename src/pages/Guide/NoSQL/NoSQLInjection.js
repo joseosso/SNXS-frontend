@@ -44,7 +44,7 @@ const NoSqlInjection = () => {
     );
 
     const booleanBased = <NoSqlInjectionType
-        title={<h1>Boolean based blind NoSQLi</h1>}
+        title={<h1>Boolean Based Blind NoSQLi</h1>}
         definition={(<p>The injection includes boolean expressions which change the page
             depending on its value</p>)}
         sample={(
@@ -65,7 +65,7 @@ const NoSqlInjection = () => {
         }/>
 
     const timeBased = <NoSqlInjectionType
-        title={<h1>Time based NoSQLi</h1>}
+        title={<h1>Time Based NoSQLi</h1>}
         definition={(<p>Very similar to boolean nosqli except the hacker intends to pause the NoSQL
             instance before returning results.</p>)}
         sample={(
@@ -84,7 +84,7 @@ const NoSqlInjection = () => {
         }/>
 
     const errorBased = <NoSqlInjectionType
-        title={<h1>Error based NoSQLi</h1>}
+        title={<h1>Error Based NoSQLi</h1>}
         definition={(<p>The hacker inputs strings or characters which would cause errors and
             check if the server returns errors (directly from Mongo or a 500 error)</p>)}
         sample={(

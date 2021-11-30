@@ -68,7 +68,7 @@ const SqlInjection = () => {
         </ul>}/>;
 
     const timeBased = <SqlInjectionType
-        title={<h1>Time based blind SQLi</h1>}
+        title={<h1>Time Based Blind SQLi</h1>}
         definition={<p>
             Sends a SQL query which forces the application to wait for an amount of time
             before responding.
@@ -90,7 +90,7 @@ const SqlInjection = () => {
         </ul>}/>;
 
     const errorBased = <SqlInjectionType
-        title={<h1>Error based SQLi</h1>}
+        title={<h1>Error Based SQLi</h1>}
         definition={<p>
             Sends a SQL query which returns an error message from the database
             indicating its vulnerability.
@@ -113,7 +113,7 @@ const SqlInjection = () => {
         </ul>}/>;
 
     const unionBased = <SqlInjectionType
-        title={<h1>Union query based SQLi</h1>}
+        title={<h1>Union Query Based SQLi</h1>}
         definition={<p>
             Sends a SQL query which contains the UNION operator which requires a
             correct table name and the same amount of columns.
@@ -135,7 +135,7 @@ const SqlInjection = () => {
         </ul>}/>;
 
     const stackQueriesBased = <SqlInjectionType
-        title={<h1>Stacked queries based SQLi</h1>}
+        title={<h1>Stacked Queries Based SQLi</h1>}
         definition={<p>
             Sends a semicolon which terminates the original SQL statement and injects
             a new one.

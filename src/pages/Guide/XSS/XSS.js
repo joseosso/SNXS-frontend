@@ -49,8 +49,7 @@ const XSS = () => {
         </p>}
         sample={<Fragment><p>The following URL represents a sample page which has a Welcome %user%:</p>
             <code>http://example.com/index.php?user=MrSmith</code>
-            <p>Now the hacker may inject a script into (alert has to be inside of script tags which aren't complete
-                here):</p>
+            <p>Now the hacker may inject a script as input:</p>
             <code>http://example.com/index.php?user=&lt;script>alert(123)&lt;/script></code>
             <p>If the application is vulnerable, the popup will be visible. With that, the hacker may inject more
                 elaborate scripts
