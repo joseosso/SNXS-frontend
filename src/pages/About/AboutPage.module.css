@@ -56,3 +56,15 @@
 .list a:focus {
     color: #ccc;
 }
+
+.footer {
+    margin: auto;
+    max-width: 100%;
+    text-align: center;
+}
+
+.footer ul {
+    align-items: center;
+    list-style: none;
+    padding: 0 !important;
+}
