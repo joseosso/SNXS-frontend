@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# SNXS Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SQL, NoSQL injection and XXS Scanner.
+
+This application uses the backend Django REST API found at https://github.com/marcopza/SNXS-backend
+
+## Required technologies
+
+- Node.js: https://nodejs.org/en/
 
 ## Available Scripts
 
@@ -33,38 +39,22 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Important security reccomendations
+Whether you run this backend in your own PC or at a virtual machine, make sure to:
+- Create an specific user which executes the application, and ensure they do not have superuser privileges. While the application uses shlex and popen to mitigate shell injections, a step further is making it imposible to indirectly ruin your computer.
+- Never pentest against a domain/web application which isn't yours without having written permission. Testing and attempting to use SNXS agaisnt a domain without the owner's permission could warrant legal action agaisnt yourself for which we are not responsible for. Use the tool wisely.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Outputs and vulnerability coverage:
+Our application is in no shape or form a silver bullet for detecting SQL, NoSQL injections and XSS. There are a few points to have in mind:
+- Only MongoDB injections are scanned; NoSQLi reports it does work to a certain degree to JS based databases.
+- False positives and false negatives are always a possibility when using the application; make sure to properly test each of the vulnerabilities to make ensure the existance of one. Remember to always have written consent!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Acknowledgements
+- [Charlie Belmer](https://github.com/Charlie-belmer). Creator of nosqli who was nice enough to guide us through the integration of his tool with our own.
+- [Miroslav Stampar](https://github.com/stamparm). Creator of Damn Small XSS Scanner and part of the sqlmap project. Guided us through the usage and integration of sqlmap and DSXS.
+- [Juan Manuel Madrid](https://www.linkedin.com/in/juanmanuelmadrid/?originalSubdomain=co). Guide and tutor for our graduation project.
 
-## Learn More
+## Us
+- [Marco Antonio Pérez](https://www.linkedin.com/in/marcopza/)
+- [Jose Manuel Ossorio](https://www.linkedin.com/in/jose-ossorio-945848155/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
