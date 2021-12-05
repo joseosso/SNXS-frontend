@@ -43,7 +43,7 @@ const AboutPage = () => {
                 <div className={classes.footer}>
                     <ul>
                         <li>GNU GPL v3 license</li>
-                        <li>&copy; 2021</li>
+                        <li>&copy; 2021 Marco Pérez, Jose Ossorio</li>
                         <li>
                             <a href="https://github.com/jmossorio99/SNXS-frontend">Frontend <i className="fa fa-github" /></a>
                         </li>
