@@ -39,6 +39,7 @@ const SqlInjection = () => {
                 <li><a href={'https://owasp.org/www-community/attacks/SQL_Injection'}>SQL Injection - OWASP</a></li>
                 <li><a href={'https://github.com/sqlmapproject/sqlmap/wiki/Techniques'}>sqlmap user guide
                     techniques</a></li>
+                <li><a href="https://bobby-tables.com/">Bobby Tables: A guide to preventing SQL injection</a></li>
             </ul>
         </Card>
     </section>);
