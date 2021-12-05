@@ -4,6 +4,10 @@ SQL, NoSQL injection and XXS Scanner.
 
 This application uses the backend Django REST API found at https://github.com/marcopza/SNXS-backend
 
+## Required technologies
+
+- Node.js: https://nodejs.org/en/
+
 ## Available Scripts
 
 In the project directory, you can run:
